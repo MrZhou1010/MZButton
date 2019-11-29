@@ -6,6 +6,7 @@
 ![image](https://github.com/MrZhou1010/MZButton/blob/master/demo.png)
 
 实现：
+
 方式一：分类
 
     for i in 0 ..< 4 {
