@@ -83,7 +83,7 @@ class MZButton: UIButton {
 
 extension String {
     public func getSizeWidthComment(font: UIFont, size: CGSize) -> CGSize {
-        let rect = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : font], context: nil)
+        let rect = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         return rect.size
     }
 }
