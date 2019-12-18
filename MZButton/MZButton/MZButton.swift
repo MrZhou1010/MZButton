@@ -16,6 +16,7 @@ enum MZButtonEdgeInsetsType: Int {
 }
 
 class MZButton: UIButton {
+    
     /// 图片大小,默认为(30,30)
     public var imageSize: CGSize = CGSize(width: 30, height: 30) {
         didSet {

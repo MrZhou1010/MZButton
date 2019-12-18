@@ -17,6 +17,7 @@ enum MZButtonEdgeInsetsStyle: Int {
 }
 
 extension UIButton {
+    
     func layoutButtonWithEdgeInsets(style: MZButtonEdgeInsetsStyle, imageTitleSpace: CGFloat) {
         // 1.得到imageView和titleLabel的宽、高
         let imageWith: CGFloat? = self.imageView?.frame.size.width
