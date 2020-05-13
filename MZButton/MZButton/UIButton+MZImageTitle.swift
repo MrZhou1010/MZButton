@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum MZButtonEdgeInsetsStyle: Int {
+public enum MZButtonEdgeInsetsStyle: Int {
     case top // image在上，label在下
     case left // image在左，label在右
     case bottom // image在下，label在上

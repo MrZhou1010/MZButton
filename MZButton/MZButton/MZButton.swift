@@ -8,29 +8,31 @@
 
 import UIKit
 
-enum MZButtonEdgeInsetsType: Int {
-    case top // image在上，label在下
-    case left // image在左，label在右
-    case bottom // image在下，label在上
-    case right // image在右，label在左
+public enum MZButtonEdgeInsetsType: Int {
+    case top // image在上,label在下
+    case left // image在左,label在右
+    case bottom // image在下,label在上
+    case right // image在右,label在左
 }
 
 class MZButton: UIButton {
     
-    /// 图片大小,默认为(30,30)
-    public var imageSize: CGSize = CGSize(width: 30, height: 30) {
+    /// 图片大小,默认为(30.0,30.0)
+    public var imageSize: CGSize = CGSize(width: 30.0, height: 30.0) {
         didSet {
             self.layoutButtonWithEdgeInsets(type: self.buttonEdgeInsetsType)
         }
     }
+    
     /// 间隔,默认为0.0
     public var spacing: CGFloat = 0.0 {
         didSet {
             self.layoutButtonWithEdgeInsets(type: self.buttonEdgeInsetsType)
         }
     }
+    
     /// 按钮布局的类型,默认为top
-    var buttonEdgeInsetsType: MZButtonEdgeInsetsType = .top {
+    public var buttonEdgeInsetsType: MZButtonEdgeInsetsType = .top {
         didSet {
             self.layoutButtonWithEdgeInsets(type: buttonEdgeInsetsType)
         }

@@ -9,15 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.setupUI()
     }
-
+    
     private func setupUI() {
         for i in 0 ..< 4 {
+            // 方式一
             let button1: UIButton = UIButton(type: .custom)
             button1.frame = CGRect(x: 20, y: 100 + (80 + 20) * i, width: 120, height: 80)
             button1.setTitle("微信", for: .normal)
@@ -29,7 +30,7 @@ class ViewController: UIViewController {
             button1.layer.borderWidth = 1
             button1.layer.masksToBounds = true
             self.view.addSubview(button1)
-            
+            // 方式二
             let button2: MZButton = MZButton(type: .custom)
             button2.frame = CGRect(x: 200, y: 100 + (80 + 20) * i, width: 120, height: 80)
             button2.setTitle("微信", for: .normal)
@@ -46,4 +47,3 @@ class ViewController: UIViewController {
         }
     }
 }
-
