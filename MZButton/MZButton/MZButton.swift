@@ -9,15 +9,15 @@
 import UIKit
 
 public enum MZButtonEdgeInsetsType: Int {
-    case top // image在上,label在下
-    case left // image在左,label在右
+    case top    // image在上,label在下
+    case left   // image在左,label在右
     case bottom // image在下,label在上
-    case right // image在右,label在左
+    case right  // image在右,label在左
 }
 
 class MZButton: UIButton {
     
-    /// 图片大小,默认为(30.0,30.0)
+    /// 图片大小,默认为(30.0, 30.0)
     public var imageSize: CGSize = CGSize(width: 30.0, height: 30.0) {
         didSet {
             self.layoutButtonWithEdgeInsets(type: self.buttonEdgeInsetsType)
