@@ -7,7 +7,7 @@
 
 实现：
 
-    <font color=red>注：使用自动布局的页面需要layoutSubviews方法中设置</font>
+    $\color{blue}{注：使用自动布局的页面需要}\color{red}{layoutSubviews}\color{blue}{方法中设置}$
 
 方式一：分类
 
