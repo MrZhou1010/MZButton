@@ -24,30 +24,30 @@ extension UIButton {
     ///   - imageTitleSpace: 按钮图标+文字间隔
     public func layoutButtonWithEdgeInsets(style: MZButtonEdgeInsetsStyle, imageTitleSpace: CGFloat) {
         // 1.得到imageView和titleLabel的宽、高
-        let imageWith: CGFloat = self.imageView?.frame.size.width ?? 0.0
+        let imageWidth: CGFloat = self.imageView?.frame.size.width ?? 0.0
         let imageHeight: CGFloat = self.imageView?.frame.size.height ?? 0.0
-        let labelWidth: CGFloat = self.titleLabel?.intrinsicContentSize.width ?? 0.0
-        let labelHeight: CGFloat = self.titleLabel?.intrinsicContentSize.height ?? 0.0
+        let titleWidth: CGFloat = self.titleLabel?.intrinsicContentSize.width ?? 0.0
+        let titleHeight: CGFloat = self.titleLabel?.intrinsicContentSize.height ?? 0.0
         // 2.声明全局的imageEdgeInsets和labelEdgeInsets
         var imageEdgeInsets: UIEdgeInsets = .zero
-        var labelEdgeInsets: UIEdgeInsets = .zero
+        var titleEdgeInsets: UIEdgeInsets = .zero
         // 3.根据style和space得到imageEdgeInsets和labelEdgeInsets的值
         switch style {
         case .top:
-            imageEdgeInsets = UIEdgeInsets(top: -labelHeight - imageTitleSpace * 0.5, left: 0, bottom: 0, right: -labelWidth)
-            labelEdgeInsets = UIEdgeInsets(top: 0, left: -imageWith, bottom: -imageHeight - imageTitleSpace * 0.5, right: 0)
+            imageEdgeInsets = UIEdgeInsets(top: -titleHeight - imageTitleSpace * 0.5, left: 0, bottom: 0, right: -titleWidth)
+            titleEdgeInsets = UIEdgeInsets(top: 0, left: -imageWidth, bottom: -imageHeight - imageTitleSpace * 0.5, right: 0)
         case .left:
             imageEdgeInsets = UIEdgeInsets(top: 0, left: -imageTitleSpace * 0.5, bottom: 0, right: imageTitleSpace * 0.5)
-            labelEdgeInsets = UIEdgeInsets(top: 0, left: imageTitleSpace * 0.5, bottom: 0, right: imageTitleSpace * 0.5)
+            titleEdgeInsets = UIEdgeInsets(top: 0, left: imageTitleSpace * 0.5, bottom: 0, right: imageTitleSpace * 0.5)
         case .bottom:
-            imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -labelHeight - imageTitleSpace * 0.5, right: -labelWidth)
-            labelEdgeInsets = UIEdgeInsets(top: -imageHeight - imageTitleSpace * 0.5, left: -imageWith, bottom: 0, right: 0)
+            imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -titleHeight - imageTitleSpace * 0.5, right: -titleWidth)
+            titleEdgeInsets = UIEdgeInsets(top: -imageHeight - imageTitleSpace * 0.5, left: -imageWidth, bottom: 0, right: 0)
         case .right:
-            imageEdgeInsets = UIEdgeInsets(top: 0, left: labelWidth + imageTitleSpace * 0.5, bottom: 0, right: -labelWidth - imageTitleSpace * 0.5)
-            labelEdgeInsets = UIEdgeInsets(top: 0, left: -imageWith - imageTitleSpace * 0.5, bottom: 0, right: imageWith + imageTitleSpace * 0.5)
+            imageEdgeInsets = UIEdgeInsets(top: 0, left: titleWidth + imageTitleSpace * 0.5, bottom: 0, right: -titleWidth - imageTitleSpace * 0.5)
+            titleEdgeInsets = UIEdgeInsets(top: 0, left: -imageWidth - imageTitleSpace * 0.5, bottom: 0, right: imageWidth + imageTitleSpace * 0.5)
         }
         // 4.赋值
-        self.titleEdgeInsets = labelEdgeInsets
         self.imageEdgeInsets = imageEdgeInsets
+        self.titleEdgeInsets = titleEdgeInsets
     }
 }
