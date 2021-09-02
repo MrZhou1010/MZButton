@@ -7,7 +7,7 @@
 
 实现：
 
-    注：使用自动布局的页面需要layoutSubviews方法中设置
+    <font color=red>注：使用自动布局的页面需要layoutSubviews方法中设置</font>
 
 方式一：分类
 
