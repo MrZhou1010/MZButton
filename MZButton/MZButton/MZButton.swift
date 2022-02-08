@@ -20,21 +20,21 @@ class MZButton: UIButton {
     /// 图片大小,默认为(30.0, 30.0)
     public var imageSize: CGSize = CGSize(width: 30.0, height: 30.0) {
         didSet {
-            self.layoutButtonWithEdgeInsets(type: self.buttonEdgeInsetsType)
+            self.layoutButtonEdgeInsets(with: self.buttonEdgeInsetsType)
         }
     }
     
     /// 间隔,默认为0.0
     public var spacing: CGFloat = 0.0 {
         didSet {
-            self.layoutButtonWithEdgeInsets(type: self.buttonEdgeInsetsType)
+            self.layoutButtonEdgeInsets(with: self.buttonEdgeInsetsType)
         }
     }
     
     /// 按钮布局的类型,默认为top
     public var buttonEdgeInsetsType: MZButtonEdgeInsetsType = .top {
         didSet {
-            self.layoutButtonWithEdgeInsets(type: buttonEdgeInsetsType)
+            self.layoutButtonEdgeInsets(with: self.buttonEdgeInsetsType)
         }
     }
     
@@ -42,18 +42,18 @@ class MZButton: UIButton {
         super.init(frame: frame)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
     
     override open func layoutSubviews() {
         super.layoutSubviews()
         self.titleLabel?.sizeToFit()
         self.imageView?.contentMode = .scaleAspectFit
-        self.layoutButtonWithEdgeInsets(type: self.buttonEdgeInsetsType)
+        self.layoutButtonEdgeInsets(with: self.buttonEdgeInsetsType)
     }
     
-    private func layoutButtonWithEdgeInsets(type: MZButtonEdgeInsetsType) {
+    private func layoutButtonEdgeInsets(with type: MZButtonEdgeInsetsType) {
         if self.titleLabel?.text == nil || self.imageView?.image == nil {
             return
         }
